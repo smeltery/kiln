@@ -9,7 +9,6 @@ name: Publish
 
 on:
   push:
-    branches: [main]
     tags: ['v*']
   schedule:
     # Sunday 09:00 UTC weekly rebuild — picks up Wolfi APKINDEX drift and
