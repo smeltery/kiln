@@ -1,0 +1,6 @@
+.git
+.github
+scripts
+.actrc
+.dockerignore
+*.md

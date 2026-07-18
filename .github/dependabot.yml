@@ -1,0 +1,34 @@
+version: 2
+
+updates:
+  # GitHub Actions pins (every action in .github/workflows is SHA-pinned;
+  # dependabot opens a PR when a new release lands and updates the SHA + tag
+  # comment together).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Etc/UTC
+    open-pull-requests-limit: 10
+    groups:
+      actions:
+        patterns: ['*']
+    commit-message:
+      prefix: 'chore(deps)'
+
+  # Docker base image. The only pinned FROM is the alpine bootstrap stage;
+  # the runtime stage is FROM scratch so there's nothing else to track here.
+  # The actual Wolfi package contents drift independently and are refreshed
+  # by the weekly schedule in publish.yml.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Etc/UTC
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(deps)'

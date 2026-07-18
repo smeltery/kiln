@@ -1,0 +1,47 @@
+name: PR Validation
+
+# Validates PR titles against conventional-commits so the squashed commit
+# message that lands on main is well-formed.
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+permissions: {}
+
+jobs:
+  title:
+    name: Title
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    permissions:
+      pull-requests: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+      - name: semantic-pull-request
+        uses: amannn/action-semantic-pull-request@48f256284bd46cdaab1048c3721360e808335d50 # v6.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            build
+            chore
+            ci
+            docs
+            feat
+            fix
+            perf
+            refactor
+            regression
+            revert
+            style
+            test
+          validateSingleCommit: true

@@ -1,0 +1,130 @@
+name: smoke
+
+# Smoke test for the Wolfi-based act runner image.
+#
+# Each job exercises a capability the medium-tier image is expected to provide:
+# core shell + coreutils, archive tooling, node, python, git, docker CLI, gh,
+# sudo escalation, and the actions/checkout JS action (validates that JS
+# actions execute under the embedded node runtime).
+#
+# Run with: scripts/test.sh
+
+# This workflow is the surface that the kiln image is validated
+# against. It is invoked by `nektos/act` against the freshly-built image
+# (see ci.yml's "Smoke (act)" job and scripts/test.sh) — running it on a
+# real GitHub-hosted runner would test the GitHub runner's tooling, not
+# ours, which is misleading. Triggers are restricted to workflow_dispatch
+# so it never auto-runs on push or PR.
+on:
+  workflow_dispatch:
+
+jobs:
+  shell-and-coreutils:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: identify runner
+        run: |
+          set -euo pipefail
+          echo "shell: $SHELL"
+          echo "uname: $(uname -a)"
+          cat /etc/os-release
+      - name: core utilities resolve
+        run: |
+          set -euo pipefail
+          for bin in bash sh awk sed grep find xargs tar gzip xz zstd zstdmt unzip jq yq curl wget rsync openssl gpg patch diff file less ; do
+            command -v "$bin" >/dev/null || { echo "missing: $bin" >&2; exit 1; }
+          done
+          echo ok
+
+  node-runtime:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: node + npm versions
+        run: |
+          set -euo pipefail
+          node --version
+          npm --version
+          node -e 'console.log("node executes JS:", 1 + 2)'
+
+  python-runtime:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: python + pip versions
+        run: |
+          set -euo pipefail
+          python3 --version
+          pip3 --version
+          python3 -c 'import sys, json; print(json.dumps({"py": sys.version_info[:2]}))'
+
+  build-chain:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: compile a c program
+        run: |
+          set -euo pipefail
+          cat > /tmp/hello.c <<'EOF'
+          #include <stdio.h>
+          int main(void) { puts("hello from wolfi"); return 0; }
+          EOF
+          gcc -O2 -o /tmp/hello /tmp/hello.c
+          /tmp/hello
+
+  git-and-gh:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: git + gh versions
+        run: |
+          set -euo pipefail
+          git --version
+          gh --version
+      - name: git submodule subcommand works
+        run: |
+          set -euo pipefail
+          # Wolfi's git ships the submodule helper as a shell script under
+          # /usr/libexec/git-core/. If /bin/sh is missing or the file isn't
+          # executable, `git submodule` fails with "Maybe git-submodule is
+          # broken?". Exercise the helper inside a throwaway repo since
+          # `git submodule status` requires being inside one.
+          tmp=$(mktemp -d)
+          (
+            cd "$tmp"
+            git init -q
+            # `git submodule --help` would invoke `man` which the runner image
+            # intentionally doesn't ship. `status` in an empty repo is a clean
+            # probe of the helper actually executing.
+            git submodule status
+          )
+          echo ok
+
+  docker-cli-present:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: docker client resolves (daemon optional)
+        run: |
+          set -euo pipefail
+          docker --version
+          docker buildx version
+          # Wolfi ships docker-compose as the standalone v2 binary, not as a
+          # `docker compose` CLI plugin. Test the binary directly.
+          docker-compose version
+
+  sudo-works:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: passwordless sudo
+        run: |
+          set -euo pipefail
+          sudo -n true
+          sudo -n id
+
+  js-action-checkout:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    steps:
+      - name: checkout (JS action — exercises node runner)
+        uses: actions/checkout@v6
+      - name: repo present
+        run: |
+          set -euo pipefail
+          test -f Dockerfile
+          test -f .github/workflows/smoke.yml
+          echo ok

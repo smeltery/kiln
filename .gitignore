@@ -1,0 +1,20 @@
+# act runtime artifacts — secrets/env are read from these and must never be committed
+.secrets
+.env
+.env.*
+!.env.example
+
+# act event payloads people drop in to test specific triggers
+event.json
+event-*.json
+
+# logs
+*.log
+
+# editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

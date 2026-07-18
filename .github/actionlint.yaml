@@ -1,0 +1,6 @@
+# Custom runner labels actionlint can't know about. Blacksmith provides
+# drop-in GitHub Actions runners (https://docs.blacksmith.sh); declaring the
+# label here keeps the `actionlint` lint job from flagging it as unknown.
+self-hosted-runner:
+  labels:
+    - blacksmith-4vcpu-ubuntu-2404

@@ -1,0 +1,27 @@
+# hadolint config for kiln.
+
+ignored:
+  # DL3006: "Always tag the version of an image explicitly"
+  # False positive: every FROM in this Dockerfile is `FROM ${ARG}` where the
+  # ARG default IS tagged (cgr.dev/...:latest, alpine:3.21, scratch). hadolint
+  # can't see through ARG defaults and reports the variable itself as
+  # untagged.
+  - DL3006
+
+  # DL3018: "Pin versions in apk add. Instead of `apk add <package>` use
+  # `apk add <package>=<version>`"
+  # Intentional design: the publish workflow runs a weekly scheduled rebuild
+  # to ride Wolfi's rolling apk repo for security updates. Pinning fights
+  # that design. Reproducibility comes from the image digest at publish time,
+  # not from version-pinned apk lines.
+  - DL3018
+
+  # DL3002: "Last USER should not be root"
+  # Intentional for an act runner image: act executes workflow steps under
+  # the image's default user, and steps routinely need root (apt install,
+  # `sudo`, useradd, docker socket access). Catthehacker's ubuntu act
+  # images do the same. The `runner` user with passwordless sudo is created
+  # for actions that explicitly drop privilege; default is root.
+  - DL3002
+
+failure-threshold: warning

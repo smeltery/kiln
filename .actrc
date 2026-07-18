@@ -1,0 +1,5 @@
+-P ubuntu-latest=kiln:dev
+-P ubuntu-24.04=kiln:dev
+-P ubuntu-22.04=kiln:dev
+--container-architecture linux/amd64
+--pull=false
