@@ -121,7 +121,7 @@ jobs:
     runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: checkout (JS action — exercises node runner)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: repo present
         run: |
           set -euo pipefail
