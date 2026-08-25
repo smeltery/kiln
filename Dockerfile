@@ -200,7 +200,7 @@ RUN { \
 LABEL org.opencontainers.image.base.name="wolfi (runtime)"
 LABEL org.opencontainers.image.title="kiln"
 LABEL org.opencontainers.image.description="Wolfi-based runner image for nektos/act"
-LABEL org.opencontainers.image.source="https://github.com/dotbrains/kiln"
+LABEL org.opencontainers.image.source="https://github.com/smeltery/kiln"
 LABEL org.opencontainers.image.licenses="PolyForm-Shield-1.0.0"
 
 ENV LANG=C.UTF-8 \

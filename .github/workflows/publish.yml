@@ -65,7 +65,7 @@ jobs:
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=raw,value=latest,enable={{is_default_branch}}
             # Drop-in aliases for catthehacker's tag scheme so kiln can be
-            # swapped 1:1 into act runner maps (e.g. dotbrains/bellows). kiln
+            # swapped 1:1 into act runner maps (e.g. smeltery/bellows). kiln
             # is a single image today, so these all point at the same digest;
             # the version-suffixed tags exist so consumers can pin by ubuntu
             # series and keep working if kiln ever splits per-version builds.

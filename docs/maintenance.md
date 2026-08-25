@@ -108,9 +108,9 @@ repo's publish workflow):
 
 ```bash
 cosign verify \
-  --certificate-identity-regexp "^https://github.com/dotbrains/kiln/.*$" \
+  --certificate-identity-regexp "^https://github.com/smeltery/kiln/.*$" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  ghcr.io/dotbrains/kiln:<tag>
+  ghcr.io/smeltery/kiln:<tag>
 ```
 
 SBOM + provenance attestation (attached by BuildKit during the build):
@@ -118,12 +118,12 @@ SBOM + provenance attestation (attached by BuildKit during the build):
 ```bash
 # SBOM
 docker buildx imagetools inspect \
-  ghcr.io/dotbrains/kiln:<tag> \
+  ghcr.io/smeltery/kiln:<tag> \
   --format '{{ json .SBOM }}'
 
 # Provenance
 docker buildx imagetools inspect \
-  ghcr.io/dotbrains/kiln:<tag> \
+  ghcr.io/smeltery/kiln:<tag> \
   --format '{{ json .Provenance }}'
 ```
 

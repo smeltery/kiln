@@ -1,7 +1,7 @@
 # kiln 🔥🧱
 
-[![CI](https://github.com/dotbrains/kiln/actions/workflows/ci.yml/badge.svg)](https://github.com/dotbrains/kiln/actions/workflows/ci.yml)
-[![Publish](https://github.com/dotbrains/kiln/actions/workflows/publish.yml/badge.svg)](https://github.com/dotbrains/kiln/actions/workflows/publish.yml)
+[![CI](https://github.com/smeltery/kiln/actions/workflows/ci.yml/badge.svg)](https://github.com/smeltery/kiln/actions/workflows/ci.yml)
+[![Publish](https://github.com/smeltery/kiln/actions/workflows/publish.yml/badge.svg)](https://github.com/smeltery/kiln/actions/workflows/publish.yml)
 [![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/License-PolyForm%20Shield%201.0.0-blue.svg)](https://polyformproject.org/licenses/shield/1.0.0/)
 
 A hardened, Chainguard Wolfi-based runner image for [`nektos/act`](https://github.com/nektos/act) —
@@ -9,11 +9,11 @@ the kiln your CI bakes in. Built as a leaner, glibc-native alternative to
 `catthehacker/ubuntu:act-latest`, with the same `act-medium` surface area
 workflows expect from `ubuntu-latest`.
 
-It pairs naturally with [`dotbrains/bellows`](https://github.com/dotbrains/bellows),
+It pairs naturally with [`smeltery/bellows`](https://github.com/smeltery/bellows),
 which runs your GitHub Actions workflows locally through act before you push:
 **bellows feeds the fire; kiln does the hardening.**
 
-The image is published to `ghcr.io/dotbrains/kiln` by the publish workflow.
+The image is published to `ghcr.io/smeltery/kiln` by the publish workflow.
 Published tags: `latest`, `act-latest`, `ubuntu-latest`, `ubuntu-24.04`,
 `ubuntu-22.04` (drop-in aliases for catthehacker's tag scheme — all the same
 digest today), plus immutable `sha-<sha>` and date-stamped tags.
@@ -21,9 +21,9 @@ digest today), plus immutable `sha-<sha>` and date-stamped tags.
 ## Quick start
 
 ```bash
-docker pull ghcr.io/dotbrains/kiln:latest
+docker pull ghcr.io/smeltery/kiln:latest
 
-act -P ubuntu-latest=ghcr.io/dotbrains/kiln:latest
+act -P ubuntu-latest=ghcr.io/smeltery/kiln:latest
 ```
 
 Or use the repo's `.actrc`, which already pins `ubuntu-latest`,
@@ -39,4 +39,4 @@ Or use the repo's `.actrc`, which already pins `ubuntu-latest`,
 
 ## License
 
-[PolyForm Shield License 1.0.0](LICENSE). © 2026 dotbrains.
+[PolyForm Shield License 1.0.0](LICENSE). © 2026 smeltery.
