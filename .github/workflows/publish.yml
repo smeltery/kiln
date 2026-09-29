@@ -27,7 +27,7 @@ permissions:
 jobs:
   docker:
     name: Build + publish
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       packages: write     # push to GHCR

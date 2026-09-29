@@ -20,7 +20,7 @@ on:
 
 jobs:
   shell-and-coreutils:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: identify runner
         run: |
@@ -37,7 +37,7 @@ jobs:
           echo ok
 
   node-runtime:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: node + npm versions
         run: |
@@ -47,7 +47,7 @@ jobs:
           node -e 'console.log("node executes JS:", 1 + 2)'
 
   python-runtime:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: python + pip versions
         run: |
@@ -57,7 +57,7 @@ jobs:
           python3 -c 'import sys, json; print(json.dumps({"py": sys.version_info[:2]}))'
 
   build-chain:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: compile a c program
         run: |
@@ -70,7 +70,7 @@ jobs:
           /tmp/hello
 
   git-and-gh:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: git + gh versions
         run: |
@@ -97,7 +97,7 @@ jobs:
           echo ok
 
   docker-cli-present:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: docker client resolves (daemon optional)
         run: |
@@ -109,7 +109,7 @@ jobs:
           docker-compose version
 
   sudo-works:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: passwordless sudo
         run: |
@@ -118,7 +118,7 @@ jobs:
           sudo -n id
 
   js-action-checkout:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: checkout (JS action — exercises node runner)
         uses: actions/checkout@v7
