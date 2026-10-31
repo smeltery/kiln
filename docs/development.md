@@ -27,7 +27,7 @@ flowchart TD
     Commit[pre-commit] --> Check[bun run check inside Flox]
     CI[CI lint job] --> Check
     Check --> Native[hadolint, actionlint, shellcheck]
-    Check --> Docs[Markdown, links, Mermaid parsing]
+    Check --> Docs[Markdown, links, Mermaid parsing, brand integrity]
     Check --> Budget[LOC budget and whitespace]
     Push[pre-push] --> Build[Build image and run act smoke]
     Matrix[CI direct and bootstrap matrix] --> Build
@@ -37,10 +37,14 @@ flowchart TD
 The pre-push hook runs `scripts/verify-images.sh`, building and smoke-testing
 both direct and bootstrap variants, just like the CI matrix. Hook installation is local to each checkout.
 
-Markdown validation covers README and all documentation. Mermaid fences are
+Markdown validation covers README, documentation, and brand usage guidance. Mermaid fences are
 parsed by Mermaid itself with an in-memory DOM; relative file links must exist.
 External URLs and fragment anchors are not checked. Diagram layout still needs
 visual review on GitHub.
+
+`bun run brand:check` verifies the [brand library](../assets/brand/README.md)
+as part of these shared checks. Review intentional asset changes, then run
+`bun run brand:update` to update its SHA-256 manifest.
 
 ## Keep changes lean
 

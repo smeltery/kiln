@@ -1,4 +1,4 @@
 {
-  "globs": ["README.md", "docs/**/*.md"],
-  "config": { "MD013": false, "MD060": false }
+  "globs": ["README.md", "docs/**/*.md", "assets/brand/**/*.md"],
+  "config": { "MD013": false, "MD033": false, "MD060": false }
 }

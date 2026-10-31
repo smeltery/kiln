@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "check": "bash scripts/check.sh",
-    "check:docs": "markdownlint-cli2 && bun scripts/check-docs.ts",
+    "check:docs": "markdownlint-cli2 && bun scripts/check-docs.ts && bun run brand:check",
+    "brand:check": "bun scripts/brand.ts",
+    "brand:update": "bun scripts/brand.ts --write",
     "check:loc": "bun scripts/check-loc.ts"
   },
   "devDependencies": {
