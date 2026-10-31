@@ -11,10 +11,13 @@
 [![Bun](https://img.shields.io/badge/checks-Bun-black?logo=bun)](package.json)
 [![License](https://img.shields.io/badge/license-PolyForm_Shield_1.0.0-blue)](LICENSE)
 
-A Wolfi-based, glibc-native container image for running GitHub Actions locally
-with [act](https://github.com/nektos/act). Includes shell utilities, Node.js,
-Python, a C/C++ toolchain, Git, and Docker clients. Published for AMD64 and ARM64
-with signatures, SBOMs, and build provenance.
+Kiln provides the container environment that [act](https://github.com/nektos/act)
+uses to run GitHub Actions workflows on your machine. Built on Wolfi Linux with
+glibc, it includes shell utilities, Node.js, Python, a C/C++ toolchain, Git, and
+Docker clients.
+
+Images are published for AMD64 and ARM64 with signatures, software bills of
+materials (SBOMs), and build provenance—a record of how each image was built.
 
 ```bash
 docker pull ghcr.io/smeltery/kiln:latest
