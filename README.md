@@ -35,4 +35,4 @@ See [docs/](docs/README.md) for [usage](docs/usage.md),
 workflows; Kiln supplies the runner environment. Brand assets, fonts, tokens,
 and usage guidance live in [assets/brand](assets/brand/README.md).
 
-[PolyForm Shield License 1.0.0](LICENSE) · © 2026 smeltery.
+Licensed under [PolyForm Shield License 1.0.0](LICENSE).
