@@ -1,7 +1,7 @@
 # kiln 🔥🧱
 
-[![CI](https://github.com/smeltery/kiln/actions/workflows/ci.yml/badge.svg)](https://github.com/smeltery/kiln/actions/workflows/ci.yml)
-[![Publish](https://github.com/smeltery/kiln/actions/workflows/publish.yml/badge.svg)](https://github.com/smeltery/kiln/actions/workflows/publish.yml)
+[![CI](https://github.com/smeltery/kiln/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/smeltery/kiln/actions/workflows/ci.yml)
+[![Publish](https://github.com/smeltery/kiln/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/smeltery/kiln/actions/workflows/publish.yml)
 [![Release](https://img.shields.io/github/v/release/smeltery/kiln)](https://github.com/smeltery/kiln/releases)
 [![Wolfi](https://img.shields.io/badge/Linux-Wolfi-blue)](https://wolfi.dev)
 [![Docker](https://img.shields.io/badge/OCI-Docker-2496ED?logo=docker&logoColor=white)](https://github.com/smeltery/kiln/pkgs/container/kiln)
