@@ -1,4 +1,6 @@
-# kiln 🔥🧱
+# Kiln
+
+![Kiln: Built for the work. A Wolfi-based runner image for act.](assets/brand/applications/readme-banner.png)
 
 [![CI](https://github.com/smeltery/kiln/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/smeltery/kiln/actions/workflows/ci.yml)
 [![Publish](https://github.com/smeltery/kiln/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/smeltery/kiln/actions/workflows/publish.yml)
@@ -25,5 +27,9 @@ Workflows requiring `apt`, systemd, or a full GitHub-hosted VM need adaptation.
 See [docs/](docs/README.md) for [usage](docs/usage.md),
 [packages](docs/packages.md), [development](docs/development.md),
 [build options](docs/building.md), and [releases](docs/automation.md).
+
+[Bellows](https://github.com/smeltery/bellows) plans and orchestrates local
+workflows; Kiln supplies the runner environment. Brand assets, fonts, tokens,
+and usage guidance live in [assets/brand](assets/brand/README.md).
 
 [PolyForm Shield License 1.0.0](LICENSE) · © 2026 smeltery.

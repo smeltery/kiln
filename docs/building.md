@@ -49,3 +49,16 @@ Both modes produce a 100% Wolfi runtime. CI tests both modes; publish uses `dire
 
 Longer rationale and the usrmerge / `--no-scripts` details for bootstrap
 mode: see [`architecture.md`](architecture.md).
+
+## Brand assets
+
+The canonical [brand library](../assets/brand/README.md) supplies the README
+banner and the documentation's light/dark logos. Check its asset manifest with:
+
+```bash
+bun run brand:check
+```
+
+After reviewing intentional asset changes, run
+`bun run brand:update` and commit the updated manifest. This check also runs
+through the shared local, hook, and CI checks with the existing Bun toolchain.

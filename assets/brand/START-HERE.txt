@@ -1,0 +1,89 @@
+KILN / IDENTITY SYSTEM 01
+Proposed identity - October 31, 2026
+
+START HERE
+Open index.html for the responsive local guide. All fonts and assets are local.
+Open kiln-brand-guide.pdf for the eight-page visual guide.
+brand-board.png gives an overview of the complete system.
+VALIDATION.txt records the delivered export and browser checks.
+checksums.json records SHA-256 hashes of all other delivered files.
+
+DIRECTION
+A solid base. For local CI.
+Supporting line: Built for the work.
+Descriptor: A Wolfi-based runner image for act.
+The chamber mark abstracts the profile and open interior of a firebrick kiln.
+Bold geometry, shared typography, and neutral surfaces relate it to Bellows;
+the distinct chamber symbol and fired-gold accent identify Kiln.
+
+LOGO SYSTEM
+Primary: Gold symbol and Ink wordmark. Reversed: Gold and Paper.
+One-color Ink and Paper, stacked logo, wordmark, symbol, app tile, and an
+adaptive SVG favicon are supplied. SVG lettering is outlined and does not
+depend on installed fonts. Transparent PNGs retain true alpha counters.
+Background-specific logo variants are intentionally opaque.
+Keep 1/4 symbol height clear around the visible artwork.
+Minimum digital sizes: 16 px symbol height and 160 px lockup width.
+Preserve proportions, spacing, lowercase lettering, and orientation.
+Do not add extra effects or decorations to the mark.
+
+COLORS
+Ink #191C22: primary text / dark surface.
+Paper #F5F3ED: primary light surface.
+Gold #E5B05C: brand emphasis and action fill; use Ink text on Gold.
+Sand #EADCCA: supporting warm surface.
+Steel #626B75: secondary text on Paper.
+Burnt Gold #7A4D16: accent text on Paper.
+On Ink use Paper for primary text and #BBC2CA for secondary text.
+Gold text on Paper is not an approved normal-text pairing.
+Semantic colors for Paper: success #2C6B50, warning #805B00, error #B23635.
+Always include visible status labels. All approved normal-text pairings
+are recorded in tokens/brand-tokens.json. Colors are sRGB; proof for print.
+
+TYPOGRAPHY
+Space Grotesk 400/500/600/700: identity, headings, and body text.
+JetBrains Mono 400/500: commands, image references, metadata, and data.
+Display 64/68/600. Heading 32/38/600. Body 16/26/400. Utility 12/18/500.
+Font originals and their SIL Open Font License notices are included.
+
+APPLICATIONS
+applications/social-preview: 1280 x 640, SVG and PNG.
+applications/readme-banner: 1600 x 480, SVG and PNG.
+applications/docs-header: 1600 x 900, SVG and PNG documentation concept.
+logos/png/app-icon.png: 512 px avatar / app tile.
+logos/png/icon-{size}.png: 16, 32, 48, 64, 180, 192, 256, 512 px.
+logos/png/favicon.ico: 16/32/48 px multi-resolution icon.
+Guide previews and exported applications use identical source compositions.
+Command specimens show documented usage; they are not captured run output.
+
+PRODUCT COPY AND CLAIMS
+Kiln is a Wolfi-based, glibc-native container image for running GitHub Actions
+locally with act. It includes shell utilities, Node.js, Python, a C/C++
+toolchain, Git, and Docker clients. Published for AMD64 and ARM64 with
+signatures, SBOMs, and build provenance.
+Ubuntu-style tags are compatibility aliases for the Wolfi image. Kiln uses
+apk. Workflows that need apt, systemd, or the full hosted VM need adaptation.
+Docker clients connect to a host daemon; the image does not run the daemon.
+Use a digest when immutable input matters. The latest tag is mutable.
+Name the actual packages, architectures, and verification artifacts.
+Keep performance and security claims specific and supported by evidence.
+
+THE FAMILY
+Bellows plans and orchestrates local workflows; Kiln supplies the runner
+environment. The shared Space Grotesk / JetBrains Mono system and neutral
+palette keep the tools related. Each product retains its own mark and accent.
+The guide includes the existing Bellows lockup only to show this relationship.
+
+SOURCE AND PROVENANCE
+Kiln: https://github.com/smeltery/kiln
+Snapshot: a4e6816c0740abd46906c016ac3297e4b857f174
+README.md, docs/usage.md, docs/packages.md, and docs/maintenance.md informed
+product copy and commands.
+Bellows brand: https://github.com/smeltery/bellows/tree/main/assets/brand
+The existing Bellows system informed typography, neutral tokens, layout,
+interaction patterns, and the comprehensive handoff structure.
+Fonts: https://github.com/google/fonts/tree/main/ofl/spacegrotesk
+       https://github.com/google/fonts/tree/main/ofl/jetbrainsmono
+Upstream font files and license notices are preserved without modification.
+Kiln artwork is native vector artwork; no generated mascot is included.
+No repository source or public branding settings were changed.

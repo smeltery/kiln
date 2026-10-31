@@ -1,0 +1,21 @@
+/* Kiln 01 - sRGB digital tokens. */
+@font-face{font-family:"Space Grotesk";src:url("../fonts/SpaceGrotesk.ttf") format("truetype");font-weight:300 700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("../fonts/JetBrainsMono.ttf") format("truetype");font-weight:100 800;font-display:swap}
+:root{
+  --kiln-ink: #191C22;
+  --kiln-paper: #F5F3ED;
+  --kiln-gold: #E5B05C;
+  --kiln-sand: #EADCCA;
+  --kiln-steel: #626B75;
+  --kiln-burnt-gold: #7A4D16;
+  --kiln-text-on-dark: #BBC2CA;
+  --kiln-surface-dark: #242931;
+  --kiln-border: #DADBD5;
+  --kiln-success: #2C6B50;
+  --kiln-warning: #805B00;
+  --kiln-error: #B23635;
+  --kiln-font-sans: "Space Grotesk", system-ui, sans-serif;
+  --kiln-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --kiln-radius: 8px;
+  --kiln-unit: 4px;
+}

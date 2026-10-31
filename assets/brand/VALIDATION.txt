@@ -1,0 +1,22 @@
+KILN / DELIVERY VALIDATION
+October 31, 2026
+
+Guide: 8 pages, rendered to PNG and visually reviewed.
+SVG artwork: 19 files parsed; no raster embeds or live text dependencies.
+Export sizes: 1280 x 640 social, 1600 x 480 README, 1600 x 900 docs concept.
+Transparent symbol: alpha background and chamber counter verified.
+Favicon: 16/32/48 px ICO and 16-512 px PNG sizes supplied.
+Text contrast: approved normal-text pairs exceed 4.5:1 in calculated sRGB.
+Responsive guide: reviewed at desktop and mobile sizes; tested at
+320, 390, 768, and 1440 px with no document-level horizontal overflow.
+Local images and fonts: loaded.
+Light, dark, and one-color logo switcher: passed.
+Color hex copy interaction: passed.
+Browser JavaScript errors: none.
+Local asset links: verified.
+Font originals and upstream license notices: included.
+Archive: integrity checked after packaging.
+
+The documentation application is a design concept. Commands show documented
+Kiln usage; no container execution or performance measurements were performed.
+Repository source and public branding settings were not changed.
