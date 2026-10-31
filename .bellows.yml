@@ -1,0 +1,23 @@
+version: 1
+default_workflows: [smoke.yml]
+event: workflow_dispatch
+docker:
+  platform: linux/amd64
+  pull: never
+runner:
+  default_image: kiln:dev
+  map:
+    ubuntu-latest: kiln:dev
+    ubuntu-24.04: kiln:dev
+    ubuntu-22.04: kiln:dev
+secrets:
+  mode: none
+profiles:
+  local:
+    executor: flox
+    checks:
+      lint:
+        argv: [bash, -c, 'bun install --frozen-lockfile && bun run check']
+      images:
+        needs: [lint]
+        argv: [bash, scripts/verify-images.sh]

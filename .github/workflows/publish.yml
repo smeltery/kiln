@@ -1,21 +1,23 @@
 name: Publish
 
-# Build + publish the kiln image to GitHub Container Registry
-# (ghcr.io/<owner>/kiln).
-#
-# Self-contained: multi-arch buildx, GHCR auth via the workflow token, cosign
-# keyless signing (GitHub OIDC), and a BuildKit SBOM + provenance attestation.
-# No external registry or signing key required.
-
 on:
   push:
     tags: ['v*']
   schedule:
     # Sunday 09:00 UTC weekly rebuild — picks up Wolfi APKINDEX drift and
     # security updates without anyone having to push. Each rebuild is tagged
-    # by sha + date, so it's a distinct immutable artifact.
+    # by sha + date; consumers requiring immutability should pin a digest.
     - cron: '0 9 * * 0'
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag (empty for a development rebuild)
+        type: string
+        required: false
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 env:
   REGISTRY: ghcr.io
@@ -28,8 +30,9 @@ jobs:
   docker:
     name: Build + publish
     runs-on: ubuntu-24.04
+    timeout-minutes: 60
     permissions:
-      contents: read
+      contents: write
       packages: write     # push to GHCR
       id-token: write     # cosign keyless (GitHub OIDC)
       attestations: write # build provenance attestation
@@ -39,6 +42,15 @@ jobs:
         with:
           egress-policy: audit
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+      - name: Validate release tag
+        env:
+          RELEASE_TAG: ${{ inputs.tag || (github.ref_type == 'tag' && github.ref_name) || '' }}
+        run: |
+          if [ -n "$RELEASE_TAG" ]; then
+            [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          fi
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4.4.0
@@ -61,7 +73,8 @@ jobs:
             type=sha
             type=ref,event=branch
             type=ref,event=tag
-            type=semver,pattern={{version}}
+            type=semver,pattern={{version}},value=${{ inputs.tag || github.ref_name }}
+            type=raw,value=${{ inputs.tag }},enable=${{ inputs.tag != '' }}
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=raw,value=latest,enable={{is_default_branch}}
             # Drop-in aliases for catthehacker's tag scheme so kiln can be
@@ -87,6 +100,7 @@ jobs:
           # Default `direct` mode builds FROM cgr.dev/chainguard/wolfi-base.
           # Override with `build-args: BUILD_MODE=bootstrap` only if cgr.dev
           # is blocked in your environment.
+          no-cache: ${{ github.event_name == 'schedule' }}
           sbom: true
           provenance: mode=max
           cache-from: type=gha
@@ -100,3 +114,13 @@ jobs:
           DIGEST: ${{ steps.build.outputs.digest }}
         run: |
           cosign sign --yes "${REGISTRY}/${IMAGE_NAME}@${DIGEST}"
+
+      - name: Create GitHub release
+        if: inputs.tag != '' || github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --verify-tag --generate-notes
+          fi

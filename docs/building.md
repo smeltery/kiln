@@ -1,5 +1,7 @@
 # Building and testing locally
 
+Install the [development environment](development.md) first.
+
 ## Build
 
 ```bash
@@ -19,14 +21,14 @@ Tunable via env:
 | `WOLFI_REPO`      | `https://packages.wolfi.dev/os`                                  | apk repository URL                                      |
 | `WOLFI_KEY_URL`   | `https://packages.wolfi.dev/os/wolfi-signing.rsa.pub`            | apk signing key URL                                     |
 | `PLATFORM`        | `linux/amd64`                                                    | `docker buildx --platform` value                        |
-| `PUSH`            | `0`                                                              | Set to `1` to `docker push` after build                 |
+| `PUSH`            | `0`                                                              | Set to `1` to push directly from buildx                 |
 
 ## Test
 
-`scripts/test.sh` builds the image (if not already present) and runs the
-bundled smoke workflow under act. The smoke workflow exercises shell,
+`scripts/test.sh` requires a locally built image and runs the
+bundled smoke workflow under act. Run `scripts/build.sh` first. The smoke workflow exercises shell,
 coreutils, node, python, build chain, git, gh, docker CLI, sudo, and the
-`actions/checkout@v4` JS action against the runtime.
+`actions/checkout@v7` JS action against the runtime.
 
 ## Build modes
 
@@ -41,9 +43,9 @@ The Dockerfile has two routes to a Wolfi runtime, selected via
   image's `apk-tools` to install Wolfi packages from `packages.wolfi.dev/os`
   into `/rootfs`, then start the final stage `FROM scratch` and copy
   `/rootfs` in. No Alpine binaries end up in the runtime. Use this when your
-  environment can't pull `cgr.dev/chainguard/*` (registry allowlist, air-gap).
+  environment can't pull `cgr.dev/chainguard/*` (registry allowlist).
 
-Both modes produce a 100% Wolfi runtime. CI and publish use `direct` mode.
+Both modes produce a 100% Wolfi runtime. CI tests both modes; publish uses `direct` mode.
 
 Longer rationale and the usrmerge / `--no-scripts` details for bootstrap
 mode: see [`architecture.md`](architecture.md).

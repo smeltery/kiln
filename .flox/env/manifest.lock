@@ -1,0 +1,901 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.16.0",
+    "install": {
+      "act": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#act"
+      },
+      "actionlint": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#actionlint"
+      },
+      "bash": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#bash"
+      },
+      "bun": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#bun"
+      },
+      "git": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#git"
+      },
+      "hadolint": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#hadolint"
+      },
+      "nodejs": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#nodejs_24"
+      },
+      "pre-commit": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#pre-commit"
+      },
+      "shellcheck": {
+        "flake": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#shellcheck"
+      }
+    },
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-linux"
+      ]
+    }
+  },
+  "packages": [
+    {
+      "install_id": "act",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.act",
+      "derivation": "/nix/store/6vk03d5n5kyrf6dflj832j4h9dxr3b98-act-0.2.92.drv",
+      "outputs": {
+        "out": "/nix/store/0nx0hqq2883mhksxw2jp84mg481mk6dp-act-0.2.92"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "act-0.2.92",
+      "pname": "act",
+      "version": "0.2.92",
+      "description": "Run your GitHub Actions locally",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "act",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.act",
+      "derivation": "/nix/store/1ljaasy8b0iqfq9marn5w0zbj6qkwnrc-act-0.2.92.drv",
+      "outputs": {
+        "out": "/nix/store/lpnmwwhizlxlnjchs8dzwdvxxsybsnfh-act-0.2.92"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "act-0.2.92",
+      "pname": "act",
+      "version": "0.2.92",
+      "description": "Run your GitHub Actions locally",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "act",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.act",
+      "derivation": "/nix/store/8sk7hi0qdv9bynk2f897ism3k98gpq7d-act-0.2.92.drv",
+      "outputs": {
+        "out": "/nix/store/gyvwp6d5kdsfj4hkjcgf012a0d3zn229-act-0.2.92"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "act-0.2.92",
+      "pname": "act",
+      "version": "0.2.92",
+      "description": "Run your GitHub Actions locally",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "actionlint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.actionlint",
+      "derivation": "/nix/store/hjz4sss1mvsvqy3d9jz2913pnjajg9kf-actionlint-1.7.12.drv",
+      "outputs": {
+        "out": "/nix/store/nj0i8g5f4piqysr9zs2y8gkpgfs2hg6h-actionlint-1.7.12"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "actionlint-1.7.12",
+      "pname": "actionlint",
+      "version": "1.7.12",
+      "description": "Static checker for GitHub Actions workflow files",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "actionlint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.actionlint",
+      "derivation": "/nix/store/qnkj9id829vij2flpzp47r8zp8xgix73-actionlint-1.7.12.drv",
+      "outputs": {
+        "out": "/nix/store/98iw3vvgkyqclzq9cz9gvwvz4a1x7wvl-actionlint-1.7.12"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "actionlint-1.7.12",
+      "pname": "actionlint",
+      "version": "1.7.12",
+      "description": "Static checker for GitHub Actions workflow files",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "actionlint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.actionlint",
+      "derivation": "/nix/store/09r10ifzz5zbhjm5lhs1nkzbzzqnb4gf-actionlint-1.7.12.drv",
+      "outputs": {
+        "out": "/nix/store/hzgnhrq7ck6rm764h0l51ihb9jc1fjj2-actionlint-1.7.12"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "actionlint-1.7.12",
+      "pname": "actionlint",
+      "version": "1.7.12",
+      "description": "Static checker for GitHub Actions workflow files",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bash",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.bash",
+      "derivation": "/nix/store/2zb4zwix6m0dhc1nmzyhad8ada8blx55-bash-interactive-5.3p20.drv",
+      "outputs": {
+        "dev": "/nix/store/3w8402q1q8x1ayyshq5i3awx2yv6bqaw-bash-interactive-5.3p20-dev",
+        "doc": "/nix/store/ggdz7br3a39d8hi4548c4z7rf57542l0-bash-interactive-5.3p20-doc",
+        "info": "/nix/store/3964wrvfvgcndswfny6cdijbqancxrm1-bash-interactive-5.3p20-info",
+        "man": "/nix/store/fwhdr50wcl31lcj02ificy7d4yiddzcz-bash-interactive-5.3p20-man",
+        "out": "/nix/store/a8r42jvrfindh7hcbg535mab0kylnfr6-bash-interactive-5.3p20"
+      },
+      "output-names": [
+        "out",
+        "dev",
+        "man",
+        "doc",
+        "info"
+      ],
+      "outputs-to-install": [
+        "man",
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "bash-interactive-5.3p20",
+      "pname": "bash-interactive",
+      "version": "5.3p20",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)",
+      "licenses": [
+        "GPL-3.0-or-later"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bash",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.bash",
+      "derivation": "/nix/store/jladqd2wjbaw74pyfl043lvigbi45rj8-bash-interactive-5.3p20.drv",
+      "outputs": {
+        "debug": "/nix/store/kss38cwpfccr9f0i5yz19cf6hzr078hw-bash-interactive-5.3p20-debug",
+        "dev": "/nix/store/mp16h7rx5nghmbrim2xz8blqyp9bs3av-bash-interactive-5.3p20-dev",
+        "doc": "/nix/store/65d0w0zyj2dkilnk4xdcg6rigq5bvnhm-bash-interactive-5.3p20-doc",
+        "info": "/nix/store/a9grajh099nyky91jy7ab35ky86wsl5a-bash-interactive-5.3p20-info",
+        "man": "/nix/store/xfl4kbpd3s2nn4njah8nn4vdfkl5all9-bash-interactive-5.3p20-man",
+        "out": "/nix/store/brnhnyb8lq3sfkdsdq10i5w85b120imz-bash-interactive-5.3p20"
+      },
+      "output-names": [
+        "out",
+        "dev",
+        "man",
+        "doc",
+        "info",
+        "debug"
+      ],
+      "outputs-to-install": [
+        "man",
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "bash-interactive-5.3p20",
+      "pname": "bash-interactive",
+      "version": "5.3p20",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)",
+      "licenses": [
+        "GPL-3.0-or-later"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bash",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.bash",
+      "derivation": "/nix/store/mgicc2710bw3ffi1814yc82057fxka5d-bash-interactive-5.3p20.drv",
+      "outputs": {
+        "debug": "/nix/store/w6b66l2mgmq42fcbawvz86fgh1vklsf5-bash-interactive-5.3p20-debug",
+        "dev": "/nix/store/hr8avz4gx4fbfrjjibn3vhf7cdikhc1y-bash-interactive-5.3p20-dev",
+        "doc": "/nix/store/hzbsyh4gfg924ljrkn74iyhxzfvmfdpk-bash-interactive-5.3p20-doc",
+        "info": "/nix/store/1czk0mzmxhn6437zm6gf2naly8gf3l6k-bash-interactive-5.3p20-info",
+        "man": "/nix/store/lgiispyin8621zdwxgl9x89cbnvdkxd6-bash-interactive-5.3p20-man",
+        "out": "/nix/store/kwyi4bq5s2qgwbhz6cs4gjy57c2zdxws-bash-interactive-5.3p20"
+      },
+      "output-names": [
+        "out",
+        "dev",
+        "man",
+        "doc",
+        "info",
+        "debug"
+      ],
+      "outputs-to-install": [
+        "man",
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "bash-interactive-5.3p20",
+      "pname": "bash-interactive",
+      "version": "5.3p20",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)",
+      "licenses": [
+        "GPL-3.0-or-later"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bun",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.bun",
+      "derivation": "/nix/store/f23cfy3n50pzsx5apyxmwfmlkjnwkiqa-bun-1.4.2.drv",
+      "outputs": {
+        "out": "/nix/store/wjpdgxsjymr2nczy9y3d5h3h1xrbhhml-bun-1.4.2"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "bun-1.4.2",
+      "pname": "bun",
+      "version": "1.4.2",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "licenses": [
+        "MIT",
+        "LGPL-2.1-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bun",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.bun",
+      "derivation": "/nix/store/3239bpm54higlwfdznq8cbsi4ln35fri-bun-1.4.2.drv",
+      "outputs": {
+        "out": "/nix/store/f8hiv5nmim0dpaxixmxiijdm8x0mffsy-bun-1.4.2"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "bun-1.4.2",
+      "pname": "bun",
+      "version": "1.4.2",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "licenses": [
+        "MIT",
+        "LGPL-2.1-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "bun",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.bun",
+      "derivation": "/nix/store/4ql11clbibnp4l68sf11j49fkaf0zivl-bun-1.4.2.drv",
+      "outputs": {
+        "out": "/nix/store/2mxhj3nrvxxqm6gf6rwnrvz048zqdclp-bun-1.4.2"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "bun-1.4.2",
+      "pname": "bun",
+      "version": "1.4.2",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "licenses": [
+        "MIT",
+        "LGPL-2.1-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "git",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.git",
+      "derivation": "/nix/store/67qqszzb9di8igr08n8jdyr3gppfdcqh-git-2.56.0.drv",
+      "outputs": {
+        "doc": "/nix/store/159hwqisk9nsymhk2w3df9z8dqk9j81c-git-2.56.0-doc",
+        "out": "/nix/store/3yd3064192bxb2kbf87fr4lam7ncazcw-git-2.56.0"
+      },
+      "output-names": [
+        "out",
+        "doc"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "git-2.56.0",
+      "pname": "git",
+      "version": "2.56.0",
+      "description": "Distributed version control system",
+      "licenses": [
+        "GPL-2.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "git",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.git",
+      "derivation": "/nix/store/mkkd8s7dk1xiy7mwnzn1ir3jll7d1dr8-git-2.56.0.drv",
+      "outputs": {
+        "debug": "/nix/store/g2ckab3z3shck8y5mwxj5kw13wrxpycc-git-2.56.0-debug",
+        "doc": "/nix/store/ddvy66njv88c3zgzgkvxfkm4r0za2rza-git-2.56.0-doc",
+        "out": "/nix/store/xqp1x3qm8j8hxqpddwzp9mg73wvrc4xb-git-2.56.0"
+      },
+      "output-names": [
+        "out",
+        "doc",
+        "debug"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "git-2.56.0",
+      "pname": "git",
+      "version": "2.56.0",
+      "description": "Distributed version control system",
+      "licenses": [
+        "GPL-2.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "git",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.git",
+      "derivation": "/nix/store/lsklxr7k7vs2qja22qr2gp4z2h97hblx-git-2.56.0.drv",
+      "outputs": {
+        "debug": "/nix/store/ikya2nngp99gs78x3i4fv7fmj4x182ar-git-2.56.0-debug",
+        "doc": "/nix/store/mb5kkl4yar0i9m20f6bglah9l7a28fcs-git-2.56.0-doc",
+        "out": "/nix/store/xgw813vgzl2q0696sq45adpj0xd690jq-git-2.56.0"
+      },
+      "output-names": [
+        "out",
+        "doc",
+        "debug"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "git-2.56.0",
+      "pname": "git",
+      "version": "2.56.0",
+      "description": "Distributed version control system",
+      "licenses": [
+        "GPL-2.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "hadolint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.hadolint",
+      "derivation": "/nix/store/gj5lm55g6ppg4mj9708gkcwsc78j6b52-hadolint-2.14.0.drv",
+      "outputs": {
+        "out": "/nix/store/dillvqixfr4bkxap3xgh2l44yybc8vaf-hadolint-2.14.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "hadolint-2.14.0",
+      "pname": "hadolint",
+      "version": "2.14.0",
+      "description": "Dockerfile Linter JavaScript API",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "hadolint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.hadolint",
+      "derivation": "/nix/store/jzbiwy3h1as788lv14fy6z2pwjaz4ya7-hadolint-2.14.0.drv",
+      "outputs": {
+        "out": "/nix/store/74842kqhcag88yl6bs8m3fsq1pa5cnwf-hadolint-2.14.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "hadolint-2.14.0",
+      "pname": "hadolint",
+      "version": "2.14.0",
+      "description": "Dockerfile Linter JavaScript API",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "hadolint",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.hadolint",
+      "derivation": "/nix/store/1vh73iw1p0g6zspnamls315l2162vyn6-hadolint-2.14.0.drv",
+      "outputs": {
+        "out": "/nix/store/rvcf2b0gxmlqs8f4932kh7bimj5vdxib-hadolint-2.14.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "hadolint-2.14.0",
+      "pname": "hadolint",
+      "version": "2.14.0",
+      "description": "Dockerfile Linter JavaScript API",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "nodejs",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.nodejs_24",
+      "derivation": "/nix/store/i2p2vcalxpyikyrihlf83ccvyn73rfg4-nodejs-24.21.0.drv",
+      "outputs": {
+        "out": "/nix/store/i376rizbw75rswsg2qlk47wj4zz3biqq-nodejs-24.21.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "version": "24.21.0",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "nodejs",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.nodejs_24",
+      "derivation": "/nix/store/pbpcbj48qdzmxzlj4p4mnfy226dq09h7-nodejs-24.21.0.drv",
+      "outputs": {
+        "out": "/nix/store/6vlx51wp6rjcsb1gcx54hfb7ndf3k2h8-nodejs-24.21.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "version": "24.21.0",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "nodejs",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.nodejs_24",
+      "derivation": "/nix/store/a7mzwdph5vkavini0lj77xph53qhgjlf-nodejs-24.21.0.drv",
+      "outputs": {
+        "out": "/nix/store/j1j9b0w3mhpccdli73ycj5w7nf6fkzqz-nodejs-24.21.0"
+      },
+      "output-names": [
+        "out"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "nodejs-24.21.0",
+      "pname": "nodejs",
+      "version": "24.21.0",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "pre-commit",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.pre-commit",
+      "derivation": "/nix/store/jd8dsj9zkxbppxh0d66jjg2lisdalks8-pre-commit-4.7.0.drv",
+      "outputs": {
+        "dist": "/nix/store/8b00j8wyrxmrzf0p3nkhapwflw3qwvak-pre-commit-4.7.0-dist",
+        "out": "/nix/store/sjm9prb1lvmicgylsdlp668cfbskdyp7-pre-commit-4.7.0"
+      },
+      "output-names": [
+        "out",
+        "dist"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "pre-commit-4.7.0",
+      "pname": "pre-commit",
+      "version": "4.7.0",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "pre-commit",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.pre-commit",
+      "derivation": "/nix/store/5j7bxbj42rxzn15ljwdcmxlar7z96dzl-pre-commit-4.7.0.drv",
+      "outputs": {
+        "dist": "/nix/store/7n5csazma1b9k7x7md7vfjsj3rfg486z-pre-commit-4.7.0-dist",
+        "out": "/nix/store/58xgicxdapbnyv83xk1jsy67i0bgi6b9-pre-commit-4.7.0"
+      },
+      "output-names": [
+        "out",
+        "dist"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "pre-commit-4.7.0",
+      "pname": "pre-commit",
+      "version": "4.7.0",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "pre-commit",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.pre-commit",
+      "derivation": "/nix/store/sgk0k3jrrifg5q1phk7zwsr4j9pvx2qm-pre-commit-4.7.0.drv",
+      "outputs": {
+        "dist": "/nix/store/91rapzqnlvvm5xc295jf9w6mss7g3lc6-pre-commit-4.7.0-dist",
+        "out": "/nix/store/3dgz23mn63xcrv864n4qimhf3r7myy1g-pre-commit-4.7.0"
+      },
+      "output-names": [
+        "out",
+        "dist"
+      ],
+      "outputs-to-install": [
+        "out"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "pre-commit-4.7.0",
+      "pname": "pre-commit",
+      "version": "4.7.0",
+      "description": "Framework for managing and maintaining multi-language pre-commit hooks",
+      "licenses": [
+        "MIT"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "shellcheck",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-darwin.shellcheck",
+      "derivation": "/nix/store/dh4gingli9hxyyy4hr6wxaza9yprmlwc-shellcheck-0.11.0.drv",
+      "outputs": {
+        "bin": "/nix/store/7i826r202acdz8c2q6hsggy44s1rkk0k-shellcheck-0.11.0-bin",
+        "doc": "/nix/store/6849sr6y57157l7iyn3fr6za5b2x70rc-shellcheck-0.11.0-doc",
+        "man": "/nix/store/gkpvf3c676pj1fsix3vlmfx0g4k6g03b-shellcheck-0.11.0-man",
+        "out": "/nix/store/pv6dnksa3gm0yiqglxcy673iplac54m7-shellcheck-0.11.0"
+      },
+      "output-names": [
+        "bin",
+        "man",
+        "doc",
+        "out"
+      ],
+      "outputs-to-install": [
+        "bin",
+        "doc",
+        "man"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-darwin",
+      "system": "aarch64-darwin",
+      "name": "shellcheck-0.11.0",
+      "pname": "ShellCheck",
+      "version": "0.11.0",
+      "description": "Shell script analysis tool",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "shellcheck",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.aarch64-linux.shellcheck",
+      "derivation": "/nix/store/3g7nh6l8fpn8mygb09b46qbgby0k4zbi-shellcheck-0.11.0.drv",
+      "outputs": {
+        "bin": "/nix/store/5q8w9c384fzl0fmk5gyrjbymh57msx76-shellcheck-0.11.0-bin",
+        "doc": "/nix/store/ydn5j4l28igfr4w72p0366kgw66xyj7j-shellcheck-0.11.0-doc",
+        "man": "/nix/store/2f8cickl3cpa1v5is7cjfqh3hnddcm8h-shellcheck-0.11.0-man",
+        "out": "/nix/store/14y502d9zwhxqq5b96yflz1w5gmc6wy8-shellcheck-0.11.0"
+      },
+      "output-names": [
+        "bin",
+        "man",
+        "doc",
+        "out"
+      ],
+      "outputs-to-install": [
+        "bin",
+        "doc",
+        "man"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "aarch64-linux",
+      "system": "aarch64-linux",
+      "name": "shellcheck-0.11.0",
+      "pname": "ShellCheck",
+      "version": "0.11.0",
+      "description": "Shell script analysis tool",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    },
+    {
+      "install_id": "shellcheck",
+      "locked-url": "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325?narHash=sha256-Y1CiZ4SoBUjLQyQM/pY%2BrS2dXD3CHLPstF0lmOc73D4%3D",
+      "flake-description": "A collection of packages for the Nix package manager",
+      "locked-flake-attr-path": "legacyPackages.x86_64-linux.shellcheck",
+      "derivation": "/nix/store/iy222abind87q5nd8mc8z0h6p0mhzg4g-shellcheck-0.11.0.drv",
+      "outputs": {
+        "bin": "/nix/store/dvgzys7ll0kbalprfyhbvlycvn1rmg6n-shellcheck-0.11.0-bin",
+        "doc": "/nix/store/8pna0bm0zb8vzzfw6x2mzgq0ywr4v910-shellcheck-0.11.0-doc",
+        "man": "/nix/store/nsb0gqcw4axy94g3zn3sldvw8f8b61yf-shellcheck-0.11.0-man",
+        "out": "/nix/store/38p9s2fha91gr3zd9l6l3b7s6s1wv7s6-shellcheck-0.11.0"
+      },
+      "output-names": [
+        "bin",
+        "man",
+        "doc",
+        "out"
+      ],
+      "outputs-to-install": [
+        "bin",
+        "doc",
+        "man"
+      ],
+      "requested-outputs-to-install": [],
+      "package-system": "x86_64-linux",
+      "system": "x86_64-linux",
+      "name": "shellcheck-0.11.0",
+      "pname": "ShellCheck",
+      "version": "0.11.0",
+      "description": "Shell script analysis tool",
+      "licenses": [
+        "GPL-3.0-only"
+      ],
+      "broken": false,
+      "unfree": false,
+      "priority": 5
+    }
+  ]
+}

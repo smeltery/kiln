@@ -4,41 +4,47 @@ How to make changes safely.
 
 ## Switch CI/publish to bootstrap mode
 
-CI and publish build in the default `direct` mode (`FROM
+CI tests both modes. Publish builds in the default `direct` mode (`FROM
 cgr.dev/chainguard/wolfi-base`). If your fork runs in an environment that
 can't pull `cgr.dev/chainguard/*`, force the self-contained bootstrap route
 by adding a `build-args` entry:
 
-1. `.github/workflows/ci.yml::jobs.build.steps[Build image].with` — add:
+1. In `.github/workflows/publish.yml`, set the build action input:
+
    ```yaml
    build-args: |
      BUILD_MODE=bootstrap
    ```
-2. `.github/workflows/publish.yml::jobs.docker.steps[Build + push].with` — add the
-   same `build-args` block.
 
-The Dockerfile default is `direct`, so absent these overrides direct mode is
-used. See [`architecture.md`](architecture.md) for why bootstrap mode exists.
+The Dockerfile default is `direct`. CI retains its two-mode matrix. See [`architecture.md`](architecture.md) for why bootstrap mode exists.
 
 ## Bump Node major version
 
 1. Confirm the target version exists in Wolfi:
+
    ```bash
    curl -fsSL https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz \
      | tar xzO APKINDEX | grep -E '^P:nodejs-[0-9]+$' | sort -u
    ```
+
 2. Edit `Dockerfile`:
-   ```
+
+   ```text
    ARG NODE_MAJOR=22   →   ARG NODE_MAJOR=24
    ```
+
 3. Edit `scripts/build.sh`:
-   ```
+
+   ```text
    NODE_MAJOR="${NODE_MAJOR:-22}"   →   NODE_MAJOR="${NODE_MAJOR:-24}"
    ```
+
 4. Run the smoke locally:
+
    ```bash
    scripts/build.sh && scripts/test.sh
    ```
+
 5. Open a PR. CI will rebuild + smoke against the new version.
 
 ## Bump Python minor version
@@ -55,10 +61,12 @@ Wolfi names Python packages by full minor (`python-3.13`), not major-only.
 ## Add a package
 
 1. Verify the package exists:
+
    ```bash
    curl -fsSL https://packages.wolfi.dev/os/x86_64/APKINDEX.tar.gz \
      | tar xzO APKINDEX | grep -E '^P:<package-name>$'
    ```
+
 2. Append it to **both** `apk add` lists in `Dockerfile` — the `variant-direct`
    stage and the `variant-bootstrap-builder` stage — grouped with the section
    that matches its purpose (shell, archive, crypto, build chain, etc.). The
@@ -81,9 +89,11 @@ final image. Dependabot will open a PR when a new Alpine minor lands. To
 do it by hand:
 
 1. Edit `Dockerfile`:
-   ```
+
+   ```text
    ARG BOOTSTRAP_IMAGE=docker.io/library/alpine:3.21   →   ARG BOOTSTRAP_IMAGE=docker.io/library/alpine:3.22
    ```
+
 2. Edit `scripts/build.sh` to match.
 3. CI smokes the change.
 
@@ -140,7 +150,8 @@ reusable workflow to track.
 
 ## Add a CI lint
 
-Append a step to `.github/workflows/ci.yml::jobs.lint.steps`. SHA-pin the
+Add the check to `scripts/check.sh` so CI and pre-commit both run it.
+Declare native tools in Flox and JavaScript tools in `package.json`. SHA-pin the
 action and include the tag as a trailing comment so dependabot can update
 both at once:
 
@@ -155,5 +166,5 @@ both at once:
 tests/act/run-workflows.sh
 ```
 
-This actionlints all workflows and runs `act --dryrun` on the ones that
+This actionlints all workflows and runs `act --list` on the ones that
 don't reference external reusable workflows (act can't resolve those).

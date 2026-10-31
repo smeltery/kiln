@@ -4,3 +4,10 @@ scripts
 .actrc
 .dockerignore
 *.md
+.flox
+node_modules
+docs
+tests
+bun.lock
+package.json
+.bellows.yml

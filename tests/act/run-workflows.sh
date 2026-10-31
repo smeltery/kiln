@@ -6,9 +6,9 @@ set -euo pipefail
 # Two passes:
 #   1. actionlint — static check (syntax, expression typing, action input
 #      contracts, shellcheck on `run:` blocks). Required for ALL workflows.
-#   2. act --list / --dryrun — only on workflows that don't reference an
+#   2. act --list — only on workflows that don't reference an
 #      external reusable. act can't resolve `uses: owner/repo/.github/...@ref`
-#      because that repo isn't a local path, so dryrun would fail for the
+#      because that repo isn't a local path, so listing would fail for the
 #      wrong reason. Those workflows rely on actionlint alone.
 
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -45,7 +45,7 @@ mapfile -t all_workflows < <(find .github/workflows -maxdepth 1 -name '*.yml' -o
 for wf in "${all_workflows[@]}"; do
   name="${wf##*/}"
   if grep -Eq "$external_reusable_pattern" "$wf"; then
-    yellow "==> skipping act dryrun (uses external reusable): $name"
+    yellow "==> skipping act listing (uses external reusable): $name"
     continue
   fi
   yellow "==> act --list: $name"

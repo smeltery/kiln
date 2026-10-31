@@ -1,0 +1,53 @@
+name: Auto release
+on:
+  workflow_run:
+    workflows: [CI]
+    branches: [main]
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: auto-release-main
+  cancel-in-progress: false
+jobs:
+  release:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: Tag the tested commit and dispatch publishing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git fetch origin main --tags
+          head=$(git rev-parse HEAD)
+          if [ "$head" != "$(git rev-parse origin/main)" ]; then
+            echo "Skipping superseded CI run"
+            exit 0
+          fi
+          tag=$(git tag --points-at HEAD | grep -Ex 'v[0-9]+\.[0-9]+\.[0-9]+' | sort -V | tail -1 || true)
+          if [ -z "$tag" ]; then
+            latest=$(git tag | grep -Ex 'v[0-9]+\.[0-9]+\.[0-9]+' | sort -V | tail -1 || true)
+            tag=v0.1.0
+            if [ -n "$latest" ]; then
+              tag="${latest%.*}.$((${latest##*.} + 1))"
+            fi
+            git tag "$tag" "$head"
+            git push origin "$tag"
+          fi
+          # Explicit dispatch also allows a failed publish to be retried.
+          gh workflow run publish.yml --ref main -f tag="$tag"

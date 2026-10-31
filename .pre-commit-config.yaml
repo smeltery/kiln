@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: checks
+        name: CI checks (Flox)
+        entry: flox activate -- bash -c 'bun install --frozen-lockfile && bun run check'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+      - id: smoke
+        name: Build and smoke (Flox, pre-push)
+        entry: flox activate -- scripts/verify-images.sh
+        language: system
+        stages: [pre-push]
+        pass_filenames: false
+        always_run: true

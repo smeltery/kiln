@@ -1,0 +1,15 @@
+schema-version = "1.16.0"
+
+[install]
+bun.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#bun"
+nodejs.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#nodejs_24"
+bash.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#bash"
+git.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#git"
+actionlint.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#actionlint"
+hadolint.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#hadolint"
+shellcheck.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#shellcheck"
+pre-commit.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#pre-commit"
+act.flake = "github:NixOS/nixpkgs/1c89083e451e891152365b799595cf7790a43325#act"
+
+[options]
+systems = ["aarch64-darwin", "aarch64-linux", "x86_64-linux"]
