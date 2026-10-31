@@ -4,7 +4,7 @@ Install [Flox](https://flox.dev/docs/install-flox/) and a Docker daemon, then:
 
 ```bash
 flox activate
-bun install --frozen-lockfile
+npm ci --ignore-scripts
 pre-commit install --hook-type pre-commit --hook-type pre-push
 bun run check
 scripts/build.sh
@@ -16,7 +16,7 @@ The manifest pins Nix package inputs and the committed lockfile fixes their
 resolved builds across Linux and macOS. No FloxHub account is required.
 Docker remains a host service; Flox does not start a daemon.
 
-Bun installs the locked documentation dependencies and runs the check scripts.
+npm installs the locked documentation dependencies; Bun runs the check scripts.
 Node.js is available for tools whose executables use a Node shebang.
 Activation does not install dependencies or modify Git hooks automatically.
 
@@ -52,7 +52,7 @@ change the limits only with an explicit rationale in review.
 
 To update tools, change the pinned Nix revision in `.flox/env/manifest.toml`,
 run `flox edit --sync`, and commit the manifest and lockfile together.
-For JavaScript dependencies, use `bun update` and commit `bun.lock`.
+For JavaScript dependencies, use `npm update --ignore-scripts` and commit `package-lock.json`.
 
 ## Local verification with Bellows
 

@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - uses: flox/install-flox-action@5bb9eaaffbeaa699a8251a1ae21ecf4c8e0e37d4 # v2
       - name: Shared local and CI checks
-        run: flox activate -- bash -c 'bun install --frozen-lockfile && bun run check'
+        run: flox activate -- bash -c 'npm ci --ignore-scripts && bun run check'
 
   build:
     name: Build + smoke (act)

@@ -17,7 +17,7 @@ profiles:
     executor: flox
     checks:
       lint:
-        argv: [bash, -c, 'bun install --frozen-lockfile && bun run check']
+        argv: [bash, -c, 'npm ci --ignore-scripts && bun run check']
       images:
         needs: [lint]
         argv: [bash, scripts/verify-images.sh]

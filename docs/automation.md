@@ -23,7 +23,7 @@ cancel obsolete CI runs. Each job has a timeout and read-only default permission
 [PR validation](../.github/workflows/pr-validation.yml) checks conventional titles.
 The [smoke workflow](../.github/workflows/smoke.yml) is run inside kiln by act;
 manually running it on GitHub would test the host runner instead.
-Dependabot maintains action pins, Docker references, and Bun dependencies.
+Dependabot maintains action pins, Docker references, and npm dependencies.
 
 ## Automatic releases
 

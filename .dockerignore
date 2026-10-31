@@ -8,6 +8,6 @@ scripts
 node_modules
 docs
 tests
-bun.lock
+package-lock.json
 package.json
 .bellows.yml

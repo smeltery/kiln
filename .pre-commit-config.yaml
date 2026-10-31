@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: checks
         name: CI checks (Flox)
-        entry: flox activate -- bash -c 'bun install --frozen-lockfile && bun run check'
+        entry: flox activate -- bash -c 'npm ci --ignore-scripts && bun run check'
         language: system
         pass_filenames: false
         always_run: true
