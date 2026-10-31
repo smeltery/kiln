@@ -8,7 +8,11 @@
   },
   "devDependencies": {
     "happy-dom": "21.0.4",
-    "markdownlint-cli2": "0.23.3",
+    "markdownlint-cli2": "0.24.0",
     "mermaid": "12.2.0"
+  },
+  "overrides": {
+    "re2js": "2.8.7",
+    "katex": "0.18.2"
   }
 }

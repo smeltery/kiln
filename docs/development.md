@@ -13,7 +13,7 @@ scripts/test.sh
 
 Flox supplies Bash, Bun, Node.js, act, pre-commit, and all native linters.
 The manifest pins Nix package inputs and the committed lockfile fixes their
-resolved builds across Linux and macOS. No FloxHub account is required.
+resolved builds across Linux and Apple Silicon macOS. No FloxHub account is required.
 Docker remains a host service; Flox does not start a daemon.
 
 npm installs the locked documentation dependencies; Bun runs the check scripts.
@@ -52,7 +52,9 @@ change the limits only with an explicit rationale in review.
 
 To update tools, change the pinned Nix revision in `.flox/env/manifest.toml`,
 run `flox edit --sync`, and commit the manifest and lockfile together.
-For JavaScript dependencies, use `npm update --ignore-scripts` and commit `package-lock.json`.
+For JavaScript dependencies, use `npm update --ignore-scripts` and commit
+`package-lock.json`. The `re2js` and `katex` overrides select patched versions
+until the documentation tools update their transitive dependencies.
 
 ## Local verification with Bellows
 
